@@ -14,13 +14,13 @@ class PagesController extends Controller
         return view('home');
     }
 
-    public function market()
+    public function haze()
     {
-        return view('market');
+        return view('haze');
     }
 
-    public function masterhall()
+    public function hazehall()
     {
-        return view('masterhall');
+        return view('hazehall');
     }
 }

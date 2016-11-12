@@ -12,5 +12,5 @@
 */
 
 Route::get('/', 'PagesController@home');
-Route::get('/masterhall', 'PagesController@masterhall');
-Route::get('/market', 'PagesController@market');
+Route::get('/hazehall', 'PagesController@hazehall');
+Route::get('/haze', 'PagesController@haze');

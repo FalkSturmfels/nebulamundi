@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Halle der Meister</h1>
+        <h1>Die Nebelhalle</h1>
+        <h2>- Die Geburtsstätte neuer Welten</h2>
     </div>
 @endsection

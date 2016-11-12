@@ -9,19 +9,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href={{url('/')}}>ROFT</a>
+            <a class="navbar-brand" href={{url('/')}}>NebulaMundi</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class={{ Request::segment(1) === 'market' ? 'active' : null }}>
-                    <a href={{ url('market') }}>Händlerviertel</a>
+                <li class={{ Request::segment(1) === 'haze' ? 'active' : null }}>
+                    <a href={{ url('haze') }}>Schleier</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class={{ Request::segment(1) === 'masterhall' ? 'active' : null }}>
-                    <a href={{ url('masterhall') }}>Halle der Meister</a>
+                <li class={{ Request::segment(1) === 'hazehall' ? 'active' : null }}>
+                    <a href={{ url('hazehall') }}>Nebelkammer</a>
                 </li>
                 <li><a href="#">Login <span class="glyphicon glyphicon-log-in"></a></li>
             </ul>
