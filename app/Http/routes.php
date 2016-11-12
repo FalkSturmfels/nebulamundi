@@ -11,14 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/masterhall', function(){
-    return view('masterhall');
-});
-
-Route::get('/market', function(){
-    return view('market');
-});
+Route::get('/', 'PagesController@home');
+Route::get('/masterhall', 'PagesController@masterhall');
+Route::get('/market', 'PagesController@market');
