@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\World;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 
 class WorldController extends Controller
 {
@@ -15,7 +14,8 @@ class WorldController extends Controller
      */
     public function index()
     {
-        return view('worlds.index');
+        $worlds = World::all();
+        return view('worlds.index', compact('worlds'));
     }
 
     /**
