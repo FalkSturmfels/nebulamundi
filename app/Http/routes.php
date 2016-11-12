@@ -12,5 +12,6 @@
 */
 
 Route::get('/', 'PagesController@home');
-Route::get('/hazehall', 'PagesController@hazehall');
-Route::get('/haze', 'PagesController@haze');
+Route::get('/creation', 'PagesController@creation');
+
+Route::get('/worlds', 'WorldController@index');

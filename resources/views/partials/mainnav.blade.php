@@ -15,13 +15,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class={{ Request::segment(1) === 'haze' ? 'active' : null }}>
-                    <a href={{ url('haze') }}>Schleier</a>
+                <li class={{ Request::segment(1) === 'worlds' ? 'active' : null }}>
+                    <a href={{ url('worlds') }}>Schleier</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class={{ Request::segment(1) === 'hazehall' ? 'active' : null }}>
-                    <a href={{ url('hazehall') }}>Nebelkammer</a>
+                <li class={{ Request::segment(1) === 'creation' ? 'active' : null }}>
+                    <a href={{ url('creation') }}>Nebelkammer</a>
                 </li>
                 <li><a href="#">Login <span class="glyphicon glyphicon-log-in"></a></li>
             </ul>

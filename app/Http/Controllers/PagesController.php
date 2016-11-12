@@ -14,13 +14,8 @@ class PagesController extends Controller
         return view('home');
     }
 
-    public function haze()
+    public function creation()
     {
-        return view('haze');
-    }
-
-    public function hazehall()
-    {
-        return view('hazehall');
+        return view('creation.overview');
     }
 }
