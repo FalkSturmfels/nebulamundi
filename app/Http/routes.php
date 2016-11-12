@@ -15,3 +15,4 @@ Route::get('/', 'PagesController@home');
 Route::get('/creation', 'PagesController@creation');
 
 Route::get('/worlds', 'WorldController@index');
+Route::get('/worlds/{world}', 'WorldController@show');

@@ -6,8 +6,7 @@
         <h2>- die Welt zwischen den Welten</h2>
 
         @foreach($worlds as $world)
-            <li>{{$world->name}}</li>
+            <li><a href="{{ url('/worlds', $world->id)}}">{{$world->name}}</a></li>
         @endforeach
-        {{--{{$worlds}}--}}
     </div>
 @endsection
