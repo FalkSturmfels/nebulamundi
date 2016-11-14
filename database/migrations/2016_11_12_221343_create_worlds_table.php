@@ -14,9 +14,12 @@ class CreateWorldsTable extends Migration
     {
         Schema::create('worlds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->text('description');
             $table->timestamps();
+
+            $table->integer('user_id')->unsigned()->unique();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
