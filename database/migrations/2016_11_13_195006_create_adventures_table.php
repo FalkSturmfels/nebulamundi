@@ -31,7 +31,6 @@ class CreateAdventuresTable extends Migration
      */
     public function down()
     {
-        Schema::drop('adventure_world_user');
         Schema::drop('adventures');
     }
 }
