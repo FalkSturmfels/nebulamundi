@@ -19,7 +19,7 @@ class CreateAdventuresTable extends Migration
             $table->enum('status', ['INWORK', 'RELEASED'])->default('INWORK');
             $table->timestamps();
 
-            $table->integer('world_id')->unsigned()->unique();
+            $table->integer('world_id')->unsigned();
             $table->foreign('world_id')->references('id')->on('worlds')->onDelete('cascade');
         });
     }
