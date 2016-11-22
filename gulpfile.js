@@ -17,7 +17,8 @@ elixir(function(mix) {
     mix.styles([
         'libs/bootstrap/css/bootstrap.min.css',
         'css/app.css',
-        'libs/select2/css/select2.min.css'
+        'libs/select2/css/select2.min.css',
+        'libs/font-awesome/css/font-awesome.min.css'
     ], 'public/css/final.css', 'resources/assets/');
 
     mix.scripts([
