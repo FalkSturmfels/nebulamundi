@@ -8,7 +8,7 @@
     <!-- Referencing mixed final css -->
     {{ Html::style('css/final.css') }}
 
-    <title>Title</title>
+    <title>Nebula Mundi</title>
 </head>
 <body>
 

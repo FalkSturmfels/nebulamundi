@@ -12,7 +12,14 @@
 */
 
 Route::get('/', 'PagesController@home');
-Route::get('/creation', 'PagesController@creation');
 
-Route::get('/worlds', 'WorldController@index');
-Route::get('/worlds/{world}', 'WorldController@show');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/creation', 'PagesController@creation');
+
+    Route::get('/worlds', 'WorldController@index');
+    Route::get('/worlds/{world}', 'WorldController@show');
+});
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
