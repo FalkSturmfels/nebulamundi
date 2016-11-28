@@ -23,6 +23,11 @@
                 <li class={{ Request::segment(1) === 'creation' ? 'active' : null }}>
                     <a href={{ url('creation') }}>Nebelkammer</a>
                 </li>
+                @can('user-index')
+                <li class={{ Request::segment(1) === 'users' ? 'active' : null }}>
+                    <a href={{ url('users') }}>User</a>
+                </li>
+                @endcan
                 @if(Auth::check())
                     <li><a href={{url('/logout')}}><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                 @else
