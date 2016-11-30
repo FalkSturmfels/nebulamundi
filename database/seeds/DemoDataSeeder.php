@@ -1,6 +1,11 @@
 <?php
 
+use App\Models\Core\Adventure;
+use App\Models\Core\User;
+use App\Models\Core\World;
+
 use Illuminate\Database\Seeder;
+
 
 class DemoDataSeeder extends Seeder
 {
@@ -55,7 +60,7 @@ class DemoDataSeeder extends Seeder
     {
         foreach ($this->userNames as $name)
         {
-            $this->userIdMap[$name] = factory(\App\User::class)->create([
+            $this->userIdMap[$name] = factory(User::class)->create([
                 'name' => $name
             ])->id;
         }
@@ -67,7 +72,7 @@ class DemoDataSeeder extends Seeder
         {
             foreach ($worldList as $world)
             {
-                $this->worldIdMap[$world[0]] = factory(\App\World::class)->create([
+                $this->worldIdMap[$world[0]] = factory(World::class)->create([
                     'name' => $world[0],
                     'description' => $world[1],
                     'user_id' => $this->userIdMap[$userName]
@@ -82,7 +87,7 @@ class DemoDataSeeder extends Seeder
         {
             foreach ($adventureList as $adventure)
             {
-                factory(\App\Adventure::class)->create([
+                factory(Adventure::class)->create([
                     'name' => $adventure[0],
                     'description' => $adventure[1],
                     'world_id' => $this->worldIdMap[$worldName]
