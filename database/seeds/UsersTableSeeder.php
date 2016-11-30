@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Core\Adventure;
+use App\Models\Core\User;
+use App\Models\Core\World;
+
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -11,11 +15,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\User::class, 5)->create();
+        factory(User::class, 5)->create();
 
-        App\User::all()->each(function (\App\User $u)
+        User::all()->each(function (User $u)
         {
-            $worlds = factory(\App\World::class, 2)->make([
+            $worlds = factory(World::class, 2)->make([
                 'user_id' => $u->id
             ]);
 
@@ -25,9 +29,9 @@ class UsersTableSeeder extends Seeder
             }
         });
 
-        \App\World::all()->each(function (\App\World $w)
+        World::all()->each(function (World $w)
         {
-            $adventures = factory(\App\Adventure::class, 3)->make([
+            $adventures = factory(Adventure::class, 3)->make([
                 'world_id' => $w->id
             ]);
 

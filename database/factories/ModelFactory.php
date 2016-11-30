@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Core\Adventure;
+use App\Models\Core\User;
+use App\Models\Core\World;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -11,7 +15,8 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+
+$factory->define(User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->firstName,
         'email' => $faker->safeEmail,
@@ -20,7 +25,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\World::class, function (Faker\Generator $faker) {
+$factory->define(World::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->country.'_'.$faker->randomDigit,
         'description' => $faker->text,
@@ -28,7 +33,7 @@ $factory->define(App\World::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Adventure::class, function (Faker\Generator $faker) {
+$factory->define(Adventure::class, function (Faker\Generator $faker) {
     return [
         'name' => 'Adventure in '.$faker->country.' '.$faker->randomDigitNotNull,
         'description' => $faker->text,
