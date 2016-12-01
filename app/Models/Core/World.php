@@ -3,6 +3,7 @@
 namespace App\Models\Core;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class World extends Model
 {
@@ -17,5 +18,10 @@ class World extends Model
     public function adventures()
     {
         return $this->hasMany(Adventure::class);
+    }
+
+    public function scopeOwnWorlds($query)
+    {
+        return $query->where('user_id', Auth::user()->id)->get();
     }
 }

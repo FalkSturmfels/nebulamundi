@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Core\World;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WorldController extends Controller
 {
@@ -14,7 +15,7 @@ class WorldController extends Controller
      */
     public function index()
     {
-        $worlds = World::all();
+        $worlds = World::ownWorlds();
         return view('worlds.index', compact('worlds'));
     }
 
