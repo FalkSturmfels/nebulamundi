@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\World;
+use App\Models\Core\World;
 use Illuminate\Http\Request;
 
 class WorldController extends Controller
