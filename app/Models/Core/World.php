@@ -24,4 +24,9 @@ class World extends Model
     {
         return $query->where('user_id', Auth::user()->id)->get();
     }
+
+    public function scopeByUserId($query, $id)
+    {
+        return $query->where('user_id', $id)->get();
+    }
 }

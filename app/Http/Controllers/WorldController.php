@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Core\User;
 use App\Models\Core\World;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,17 @@ class WorldController extends Controller
     public function index()
     {
         $worlds = World::ownWorlds();
-        return view('worlds.index', compact('worlds'));
+        $users = User::all();
+        $selectedUser = Auth::user();
+        return view('worlds.index', compact(['worlds', 'users', 'selectedUser']));
+    }
+
+    public function worldsByUser($id)
+    {
+        $worlds = World::byUserId($id);
+        $users = User::all();
+        $selectedUser = User::find($id);
+        return view('worlds.index', compact(['worlds', 'users', 'selectedUser']));
     }
 
     /**

@@ -16,6 +16,8 @@ Route::get('/', 'PagesController@home');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/creation', 'PagesController@creation');
 
+
+    Route::get('/worlds/user/{id}', 'WorldController@worldsByUser');
     Route::get('/worlds', 'WorldController@index');
     Route::get('/worlds/{world}', 'WorldController@show');
 

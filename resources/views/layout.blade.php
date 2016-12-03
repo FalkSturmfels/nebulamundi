@@ -14,10 +14,11 @@
 
 @include('partials.mainnav')
 
+<div class="container-fluid">
     @yield('content')
+</div>
 
-
-    <!-- Referencing mixed final js -->
-    {{Html::script('js/final.js')}}
+<!-- Referencing mixed final js -->
+{{Html::script('js/final.js')}}
 </body>
 </html>
