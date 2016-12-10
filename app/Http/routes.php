@@ -11,19 +11,26 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
-
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/creation', 'PagesController@creation');
-
-
-    Route::get('/worlds/user/{id}', 'WorldController@worldsByUser');
-    Route::get('/worlds', 'WorldController@index');
-    Route::get('/worlds/{world}', 'WorldController@show');
-
-    Route::get('/users', 'UserController@index');
-});
-
+// Auth
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+// Home
+Route::get('/', function ()
+{
+    return view('home');
+});
+
+// World
+Route::get('/worlds', 'WorldController@index');
+Route::get('/worlds/user/{id}', 'WorldController@worldsByUser');
+Route::get('/worlds/{world}', 'WorldController@show');
+
+// World def
+Route::get('/worlddefs', 'WorldDefController@index');
+Route::get('/worlddefs/create', 'WorldDefController@create');
+Route::get('/worlddefs/{world}', 'WorldDefController@show');
+
+// User
+Route::get('/users', 'UserController@index');
+
+

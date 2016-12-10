@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Core\User;
 use App\Models\Core\World;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class WorldController extends Controller
+use App\Http\Requests;
+
+class WorldDefController extends Controller
 {
     public function __construct()
     {
@@ -21,18 +22,8 @@ class WorldController extends Controller
      */
     public function index()
     {
-        $worlds = World::ownWorlds();
-        $users = User::all();
-        $selectedUser = Auth::user();
-        return view('world.index', compact(['worlds', 'users', 'selectedUser']));
-    }
-
-    public function worldsByUser($id)
-    {
-        $worlds = World::byUserId($id);
-        $users = User::all();
-        $selectedUser = User::find($id);
-        return view('world.index', compact(['worlds', 'users', 'selectedUser']));
+        $worldGrid = $this->createWorldGrid();
+        return view('worlddef.index', compact('worldGrid'));
     }
 
     /**
@@ -42,13 +33,13 @@ class WorldController extends Controller
      */
     public function create()
     {
-        //
+        return 'Create new World';
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -59,18 +50,18 @@ class WorldController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(World $world)
+    public function show($id)
     {
-        return view('world.show', compact('world'));
+        return $id;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -81,8 +72,8 @@ class WorldController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -93,11 +84,39 @@ class WorldController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
+    }
+
+
+    // ============================================
+    //
+    //   Helper methods
+    //
+    // ============================================
+
+    private function createWorldGrid()
+    {
+        $worlds = World::ownWorlds();
+
+        $grid = new Collection();
+        $offset = 0;
+        $length = 5;
+        $slice = $worlds->slice($offset, $length);
+        $offset += 5;
+        $length = 6;
+
+        while (!$slice->isEmpty())
+        {
+            $grid->add($slice);
+            $slice = $worlds->slice($offset, $length)->values();
+            $offset += 6;
+        }
+
+        return $grid;
     }
 }
