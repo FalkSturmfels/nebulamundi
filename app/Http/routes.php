@@ -28,6 +28,7 @@ Route::get('/worlds/{world}', 'WorldController@show');
 // World def
 Route::get('/worlddefs', 'WorldDefController@index');
 Route::get('/worlddefs/create', 'WorldDefController@create');
+Route::post('/worlddefs/create', 'WorldDefController@store');
 Route::get('/worlddefs/{world}', 'WorldDefController@show');
 
 // User
