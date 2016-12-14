@@ -23,8 +23,8 @@ class WorldDefController extends Controller
      */
     public function index()
     {
-        $worldGrid = $this->createWorldGrid();
-        return view('worlddef.index', compact('worldGrid'));
+        $worlds = Auth::user()->worlds;
+        return view('worlddef.index', compact('worlds'));
     }
 
     /**
@@ -96,31 +96,4 @@ class WorldDefController extends Controller
         //
     }
 
-
-    // ============================================
-    //
-    //   Helper methods
-    //
-    // ============================================
-
-    private function createWorldGrid()
-    {
-        $worlds = World::ownWorlds();
-
-        $grid = new Collection();
-        $offset = 0;
-        $length = 5;
-        $slice = $worlds->slice($offset, $length);
-        $offset += 5;
-        $length = 6;
-
-        while (!$slice->isEmpty())
-        {
-            $grid->add($slice);
-            $slice = $worlds->slice($offset, $length)->values();
-            $offset += 6;
-        }
-
-        return $grid;
-    }
 }

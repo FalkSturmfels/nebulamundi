@@ -18,6 +18,8 @@
     @yield('content')
 </div>
 
+@include('partials.bootjquery')
+
 <!-- Referencing mixed final js -->
 {{Html::script('js/final.js')}}
 </body>
