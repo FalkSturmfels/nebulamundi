@@ -93,7 +93,7 @@ class WorldDefController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return "destroyed world def ".$id;
     }
 
 }

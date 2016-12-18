@@ -6,11 +6,9 @@
 
     <div class="row">
         <div class="col-sm-3">
-            {{--<li class="list-group-item">--}}
-                <a  href="{{action('WorldDefController@create')}}">
-                    <h5>Neue Welt erschaffen ...</h5>
-                </a>
-            {{--</li>--}}
+            <a href="{{action('WorldDefController@create')}}">
+                <h5>Neue Welt erschaffen ...</h5>
+            </a>
         </div>
     </div>
     <div class="verticalSpacer"></div>
@@ -26,7 +24,8 @@
 
                 <div class="col-sm-3">
                     <li class="list-group-item" data-toggle="tooltip" title="{{$worlds[$i]->description}}">
-                        <a style="position: absolute; right:15px;" href={{url('/logout')}}>
+                        <a style="position: absolute; right:15px;" data-toggle="modal" href="#removeDialog"
+                           data-backdrop="static" data-entity="{{$worlds[$i]}}">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
                         <a href="{{action('WorldDefController@show', ['id' => $worlds[$i]->id])}}">
@@ -41,5 +40,6 @@
     @endfor
     <div class="verticalSpacer"></div>
 
+    @include('partials.removedialog', ['entityUrl' => 'worlddefs/'])
 
 @endsection

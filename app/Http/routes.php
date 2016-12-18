@@ -30,6 +30,7 @@ Route::get('/worlddefs', 'WorldDefController@index');
 Route::get('/worlddefs/create', 'WorldDefController@create');
 Route::post('/worlddefs/create', 'WorldDefController@store');
 Route::get('/worlddefs/{world}', 'WorldDefController@show');
+Route::delete('/worlddefs/{world}', 'WorldDefController@destroy');
 
 // User
 Route::get('/users', 'UserController@index');

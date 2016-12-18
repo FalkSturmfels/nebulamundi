@@ -8,6 +8,9 @@
     <!-- Referencing mixed final css -->
     {{ Html::style('css/final.css') }}
 
+    <!-- Referencing mixed final js -->
+    {{Html::script('js/final.js')}}
+
     <title>Nebula Mundi</title>
 </head>
 <body>
@@ -20,7 +23,5 @@
 
 @include('partials.bootjquery')
 
-<!-- Referencing mixed final js -->
-{{Html::script('js/final.js')}}
 </body>
 </html>
