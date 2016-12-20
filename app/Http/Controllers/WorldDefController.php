@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Core\World;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use App\Models\Core\World;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class WorldDefController extends Controller
@@ -91,9 +89,11 @@ class WorldDefController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(World $world)
     {
-        return "destroyed world def ".$id;
+        $this->authorize('destroy', $world);
+        $world->delete();
+        return back();
     }
 
 }
