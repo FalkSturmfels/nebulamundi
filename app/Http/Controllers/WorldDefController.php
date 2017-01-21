@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\StoreSimpleDefRequest;
 use App\Models\Core\World;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,10 +39,9 @@ class WorldDefController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSimpleDefRequest $request)
     {
         $user = Auth::user();
         $user->addWorld(new World($request->all()));
