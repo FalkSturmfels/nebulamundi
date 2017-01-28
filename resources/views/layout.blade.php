@@ -15,13 +15,13 @@
 </head>
 <body>
 
-@include('partials.mainnav')
+@include('partials.global.mainnav')
 
 <div class="container-fluid">
     @yield('content')
 </div>
 
-@include('partials.bootjquery')
+@include('partials.global.bootjquery')
 
 </body>
 </html>

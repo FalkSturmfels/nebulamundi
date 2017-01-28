@@ -1,10 +1,10 @@
 @extends('layout')
 
 @section('content')
-    @include('partials.header', ['headline' => 'Weltenschöpfung',
+    @include('partials.global.header', ['headline' => 'Weltenschöpfung',
                                  'subHeadline' => 'Neue Welt anlegen' ])
 
-    @include('partials.erros')
+    @include('partials.global.erros')
 
     <form class="form-horizontal" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">

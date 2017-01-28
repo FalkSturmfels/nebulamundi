@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    @include('partials.header', ['headline' => 'Die Nebelkammer',
+    @include('partials.global.header', ['headline' => 'Die Nebelkammer',
                                  'subHeadline' => 'die Geburtsstätte neuer Welten' ])
 
     <div class="row">
@@ -13,7 +13,7 @@
     </div>
     <div class="verticalSpacer"></div>
 
-    @include('partials.subheader', ['headline' => 'Welten'])
+    @include('partials.global.subheader', ['headline' => 'Welten'])
 
     @for($i=0; $i < $worlds->count(); $i++)
         @if($i % 4 == 0)
@@ -24,6 +24,10 @@
 
                 <div class="col-sm-3">
                     <li class="list-group-item" data-toggle="tooltip" title="{{$worlds[$i]->description}}">
+                        <a href="{{action('WorldDefController@edit', ['id' => $worlds[$i]->id])}}"
+                        style="position: absolute; right:35px;">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
                         <a style="position: absolute; right:15px;" data-toggle="modal" href="#removeDialog"
                            data-backdrop="static" data-entity="{{$worlds[$i]}}">
                             <i class="fa fa-times" aria-hidden="true"></i>
@@ -40,6 +44,6 @@
     @endfor
     <div class="verticalSpacer"></div>
 
-    @include('partials.removedialog', ['entityUrl' => 'worlddefs/'])
+    @include('partials.dialogs.removedialog', ['entityUrl' => 'worlddefs/'])
 
 @endsection

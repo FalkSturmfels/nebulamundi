@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    @include('partials.header', ['headline' => 'Der Schleier',
+    @include('partials.global.header', ['headline' => 'Der Schleier',
                                  'subHeadline' => 'die Welt zwischen den Welten' ])
 
     <div class="row">
