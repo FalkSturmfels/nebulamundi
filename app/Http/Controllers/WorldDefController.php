@@ -39,6 +39,7 @@ class WorldDefController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param StoreSimpleDefRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreSimpleDefRequest $request)
@@ -63,30 +64,31 @@ class WorldDefController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  World $world
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(World $world)
     {
-        //
+        return view('worlddef.edit', compact('world'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param StoreSimpleDefRequest $request
+     * @param  World $world
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreSimpleDefRequest $request, World $world)
     {
-        //
+        $world->update($request->all());
+        return redirect()->action('WorldDefController@index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  World $world
      * @return \Illuminate\Http\Response
      */
     public function destroy(World $world)
