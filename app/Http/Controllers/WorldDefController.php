@@ -53,12 +53,12 @@ class WorldDefController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  World $world
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(World $world)
     {
-        return $id;
+        return view('worlddef.show', compact('world'));
     }
 
     /**
