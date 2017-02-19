@@ -12,7 +12,8 @@
     <div class="row">
         <div class="col-sm-2">
             <div class="list-group">
-                <a href="#" class="list-group-item">Abenteuer</a>
+                <a href="{{action('AdventureController@index', ['id' =>$world->id])}}"
+                   class="list-group-item">Abenteuer</a>
             </div>
         </div>
     </div>
