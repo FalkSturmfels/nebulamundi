@@ -24,7 +24,7 @@ class WorldController extends Controller
         $worlds = World::ownWorlds();
         $users = User::all();
         $selectedUser = Auth::user();
-        return view('world.index', compact(['worlds', 'users', 'selectedUser']));
+        return view('entity.world.index', compact(['worlds', 'users', 'selectedUser']));
     }
 
     public function worldsByUser($id)
@@ -32,7 +32,7 @@ class WorldController extends Controller
         $worlds = World::byUserId($id);
         $users = User::all();
         $selectedUser = User::find($id);
-        return view('world.index', compact(['worlds', 'users', 'selectedUser']));
+        return view('entity.world.index', compact(['worlds', 'users', 'selectedUser']));
     }
 
     /**
@@ -59,12 +59,12 @@ class WorldController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param  \App\Models\Core\World $world
      * @return \Illuminate\Http\Response
      */
     public function show(World $world)
     {
-        return view('world.show', compact('world'));
+        return view('entity.world.show', compact('world'));
     }
 
     /**

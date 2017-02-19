@@ -23,7 +23,7 @@ class WorldDefController extends Controller
     public function index()
     {
         $worlds = Auth::user()->worlds;
-        return view('worlddef.index', compact('worlds'));
+        return view('entity.worlddef.index', compact('worlds'));
     }
 
     /**
@@ -33,7 +33,7 @@ class WorldDefController extends Controller
      */
     public function create()
     {
-        return view('worlddef.create');
+        return view('entity.worlddef.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class WorldDefController extends Controller
      */
     public function show(World $world)
     {
-        return view('worlddef.show', compact('world'));
+        return view('entity.worlddef.show', compact('world'));
     }
 
     /**
@@ -69,7 +69,7 @@ class WorldDefController extends Controller
      */
     public function edit(World $world)
     {
-        return view('worlddef.edit', compact('world'));
+        return view('entity.worlddef.edit', compact('world'));
     }
 
     /**
