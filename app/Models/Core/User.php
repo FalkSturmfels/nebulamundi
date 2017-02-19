@@ -28,4 +28,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(World::class);
     }
+
+    public function addWorld(World $entity)
+    {
+        return $this->worlds()->save($entity);
+    }
 }

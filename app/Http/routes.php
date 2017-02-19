@@ -11,19 +11,34 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
-
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/creation', 'PagesController@creation');
-
-
-    Route::get('/worlds/user/{id}', 'WorldController@worldsByUser');
-    Route::get('/worlds', 'WorldController@index');
-    Route::get('/worlds/{world}', 'WorldController@show');
-
-    Route::get('/users', 'UserController@index');
-});
-
+// Auth
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+// Home
+Route::get('/', function ()
+{
+    return view('home');
+});
+
+// World
+Route::get('worlds', 'WorldController@index');
+Route::get('worlds/user/{id}', 'WorldController@worldsByUser');
+Route::get('worlds/{world}', 'WorldController@show');
+
+// World def
+Route::get('worlddefs', 'WorldDefController@index');
+
+Route::get('worlddefs/create', 'WorldDefController@create');
+Route::post('worlddefs/create', 'WorldDefController@store');
+
+Route::get('worlddefs/{world}', 'WorldDefController@show');
+
+Route::get('worlddefs/{world}/edit', 'WorldDefController@edit');
+Route::patch('worlddefs/{world}', 'WorldDefController@update');
+
+Route::delete('worlddefs/{world}', 'WorldDefController@destroy');
+
+// User
+Route::get('/users', 'UserController@index');
+
+

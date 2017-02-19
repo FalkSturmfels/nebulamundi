@@ -8,17 +8,20 @@
     <!-- Referencing mixed final css -->
     {{ Html::style('css/final.css') }}
 
+    <!-- Referencing mixed final js -->
+    {{Html::script('js/final.js')}}
+
     <title>Nebula Mundi</title>
 </head>
 <body>
 
-@include('partials.mainnav')
+@include('partials.global.mainnav')
 
 <div class="container-fluid">
     @yield('content')
 </div>
 
-<!-- Referencing mixed final js -->
-{{Html::script('js/final.js')}}
+@include('partials.global.bootjquery')
+
 </body>
 </html>

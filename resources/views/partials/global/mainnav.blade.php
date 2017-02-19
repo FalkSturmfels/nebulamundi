@@ -20,8 +20,8 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class={{ Request::segment(1) === 'creation' ? 'active' : null }}>
-                    <a href={{ url('creation') }}>Nebelkammer</a>
+                <li class={{ Request::segment(1) === 'worlddefs' ? 'active' : null }}>
+                    <a href={{ action('WorldDefController@index') }}>Nebelkammer</a>
                 </li>
                 @can('user-index')
                 <li class={{ Request::segment(1) === 'users' ? 'active' : null }}>
