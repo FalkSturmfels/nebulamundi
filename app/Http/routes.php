@@ -39,7 +39,7 @@ Route::patch('worlddefs/{world}', 'WorldDefController@update');
 Route::delete('worlddefs/{world}', 'WorldDefController@destroy');
 
 // Adventure
-Route::get('worldDefs/{world}/adventures', 'AdventureController@index');
+Route::get('worlddefs/{world}/adventures', 'AdventureController@index');
 
 Route::get('worlddefs/{world}/adventures/create', 'AdventureController@create');
 Route::post('worlddefs/{world}/adventures/create', 'AdventureController@store');
@@ -49,7 +49,7 @@ Route::get('adventures/{adventure}', 'AdventureController@show');
 Route::get('adventures/{adventure}/edit', 'AdventureController@edit');
 Route::patch('adventures/{adventure}', 'AdventureController@update');
 
-Route::delete('adventures/{adventure}', 'AdventureController@destroy');
+Route::delete('worlddefs/{world}/adventures/{adventure}', 'AdventureController@destroy');
 
 // User
 Route::get('/users', 'UserController@index');

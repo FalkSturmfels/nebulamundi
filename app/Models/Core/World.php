@@ -29,4 +29,9 @@ class World extends Model
     {
         return $query->where('user_id', $id)->get();
     }
+
+    public function addAdventure(Adventure $entity)
+    {
+        return $this->adventures()->save($entity);
+    }
 }
