@@ -9,7 +9,7 @@
     <form class="form-horizontal" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-        @include('partials.forminputs.simpleentitydef', ["entity" => null])
+        @include('partials.forminputs.simple_entity_def', ["entity" => null])
 
     </form>
     </div>

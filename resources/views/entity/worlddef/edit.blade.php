@@ -10,7 +10,7 @@
         {{method_field('PATCH')}}
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-        @include('partials.forminputs.simpleentitydef', ['entity' => $world])
+        @include('partials.forminputs.simple_entity_def', ['entity' => $world])
 
     </form>
     </div>
