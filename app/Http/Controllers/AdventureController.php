@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSimpleDefRequest;
 use App\Models\Core\Adventure;
 use App\Models\Core\World;
 use Illuminate\Http\Request;
@@ -64,24 +65,27 @@ class AdventureController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  World  $world
+     * @param  Adventure  $adventure
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(World $world, Adventure $adventure)
     {
-        //
+        return view('entity.adventure.edit', compact('world', 'adventure'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param StoreSimpleDefRequest $request
+     * @param  World  $world
+     * @param Adventure $adventure
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreSimpleDefRequest $request, World $world, Adventure $adventure)
     {
-        //
+        $adventure->update($request->all());
+        return redirect()->action('AdventureController@index', $world);
     }
 
     /**

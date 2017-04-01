@@ -46,8 +46,8 @@ Route::post('worlddefs/{world}/adventures/create', 'AdventureController@store');
 
 Route::get('adventures/{adventure}', 'AdventureController@show');
 
-Route::get('adventures/{adventure}/edit', 'AdventureController@edit');
-Route::patch('adventures/{adventure}', 'AdventureController@update');
+Route::get('worlddefs/{world}/adventures/{adventure}/edit', 'AdventureController@edit');
+Route::patch('worlddefs/{world}/adventures/{adventure}', 'AdventureController@update');
 
 Route::delete('worlddefs/{world}/adventures/{adventure}', 'AdventureController@destroy');
 

@@ -24,7 +24,7 @@
 
                 <div class="col-sm-3">
                     <li class="list-group-item" data-toggle="tooltip" title="{{$adventures[$i]->description}}">
-                        <a href="{{action('AdventureController@edit', ['id' => $adventures[$i]->id])}}"
+                        <a href="{{action('AdventureController@edit', ['world' => $world->id, 'id' => $adventures[$i]->id])}}"
                            style="position: absolute; right:35px;">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
