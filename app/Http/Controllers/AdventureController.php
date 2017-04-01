@@ -41,11 +41,11 @@ class AdventureController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param  StoreSimpleDefRequest  $request
      * @param World $world
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(World $world, Request $request)
+    public function store(StoreSimpleDefRequest $request, World $world)
     {
         $world->addAdventure(new Adventure($request->all()));
         return redirect()->action('AdventureController@index', compact('world'));
