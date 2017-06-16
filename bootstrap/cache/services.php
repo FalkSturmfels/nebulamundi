@@ -29,6 +29,9 @@
     25 => 'App\\Providers\\RouteServiceProvider',
     26 => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
     27 => 'Laracasts\\Flash\\FlashServiceProvider',
+    28 => 'Unisharp\\Ckeditor\\ServiceProvider',
+    29 => 'Unisharp\\Laravelfilemanager\\LaravelFilemanagerServiceProvider',
+    30 => 'Intervention\\Image\\ImageServiceProvider',
   ),
   'eager' => 
   array (
@@ -46,6 +49,9 @@
     11 => 'App\\Providers\\EventServiceProvider',
     12 => 'App\\Providers\\RouteServiceProvider',
     13 => 'Laracasts\\Flash\\FlashServiceProvider',
+    14 => 'Unisharp\\Ckeditor\\ServiceProvider',
+    15 => 'Unisharp\\Laravelfilemanager\\LaravelFilemanagerServiceProvider',
+    16 => 'Intervention\\Image\\ImageServiceProvider',
   ),
   'deferred' => 
   array (

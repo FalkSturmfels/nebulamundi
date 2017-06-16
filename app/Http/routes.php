@@ -54,4 +54,7 @@ Route::delete('worlddefs/{world}/adventures/{adventure}', 'AdventureController@d
 // User
 Route::get('/users', 'UserController@index');
 
+//Editor
+Route::get('editor', 'EditorController@start');
+Route::patch('editor', 'EditorController@show');
 

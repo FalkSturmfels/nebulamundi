@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1>Willkommen in Nebula Mundi</h1>
+        <h1>EditorTest</h1>
         <h2>- den Nebelwelten...</h2>
 
-        <a href="{{action("EditorController@start")}}"> Editor</a>
+        {!! $html !!}
     </div>
 @endsection

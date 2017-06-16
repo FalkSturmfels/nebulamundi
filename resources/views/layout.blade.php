@@ -23,5 +23,7 @@
 
 @include('partials.global.bootjquery')
 
+@yield('scriptingaddition')
+
 </body>
 </html>
